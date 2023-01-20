@@ -123,28 +123,48 @@
                 $mid=$row['mid'];
               $sql="SELECT * FROM catering WHERE cid='$cid' ";
               $run=mysqli_query($con,$sql);
-              $row=mysqli_fetch_array($run);
-              $price1=$row['price'];
+              $price1 = 0;
+              if(mysqli_num_rows($run)!=0){
+                $row=mysqli_fetch_array($run);
+                $price1=$row['price'];
+              }
               $sql="SELECT * FROM theme WHERE tid='$tid' ";
               $run=mysqli_query($con,$sql);
-              $row=mysqli_fetch_array($run);
-              $price2=$row['price'];
+              $price2 = 0;
+              if(mysqli_num_rows($run)!=0){
+                $row=mysqli_fetch_array($run);
+                $price2=$row['price'];
+              }
+              $price3=0;
               $sql="SELECT * FROM music WHERE mid='$mid' ";
               $run=mysqli_query($con,$sql);
-              $row=mysqli_fetch_array($run);
-              $price3=$row['price'];
+              if(mysqli_num_rows($run)!=0){
+                $row=mysqli_fetch_array($run);
+                $price3=$row['price'];
+              }
+              $price4=0;
               $sql="SELECT * FROM photoshop WHERE pid='$pid' ";
               $run=mysqli_query($con,$sql);
-              $row=mysqli_fetch_array($run);
-              $price4=$row['price'];
+              if(mysqli_num_rows($run)!=0){
+                $row=mysqli_fetch_array($run);
+                $price4=$row['price'];
+              }
+              
               $sql="SELECT * FROM decoration WHERE did='$did' ";
               $run=mysqli_query($con,$sql);
-              $row=mysqli_fetch_array($run);
-              $price5=$row['price'];
+              $price5 = 0;
+              if(mysqli_num_rows($run)!=0){
+                $row=mysqli_fetch_array($run);
+                $price5=$row['price'];
+              }
+            
               $sql="SELECT * FROM venue WHERE vid='$vid' ";
               $run=mysqli_query($con,$sql);
-              $row=mysqli_fetch_array($run);
-              $price6=$row['price'];
+              $price6 = 0;
+              if(mysqli_num_rows($run)!=0){
+                $row=mysqli_fetch_array($run);
+                $price6=$row['price'];
+              }
               $sum=$price1+$price2+$price3+$price4+$price5+$price6+$s; 
                 echo " <div class='row'>
                         <div class='col-md-2'><h5>$name</h5></div>
@@ -163,7 +183,7 @@
    </div>
 </div>
 <div class="container">
-  <div class="card">
+  <div class="card mt-4">
     <div class="card-header bg-info">
       <h3 class="text-center">Wedding Details</h3>
     </div>
@@ -192,34 +212,62 @@
                 $mid=$row['mid'];
               $sql="SELECT * FROM catering WHERE cid='$cid' ";
               $run=mysqli_query($con,$sql);
-              $row=mysqli_fetch_array($run);
-              $price1=$row['price'];
-              $cname=$row['name'];
+              $price1 = 0;
+              $cname = '';
+              if(mysqli_num_rows($run)!=0){
+                $row=mysqli_fetch_array($run);
+                $price1=$row['price'];
+                $cname=$row['name'];
+              }
+              
               $sql="SELECT * FROM theme WHERE tid='$tid' ";
               $run=mysqli_query($con,$sql);
-              $row=mysqli_fetch_array($run);
-              $price2=$row['price'];
-               $tname=$row['name'];
+              $price2 = 0;
+              $tname = '';
+              if(mysqli_num_rows($run)!=0){
+                $row=mysqli_fetch_array($run);
+                $price2=$row['price'];
+                $tname=$row['name'];  
+              }
+             
               $sql="SELECT * FROM music WHERE mid='$mid' ";
               $run=mysqli_query($con,$sql);
-              $row=mysqli_fetch_array($run);
-              $price3=$row['price'];
-               $mname=$row['name'];
+              $price3 = 0;
+              $mname = '';
+              if(mysqli_num_rows($run)!=0){
+                $row=mysqli_fetch_array($run);
+                $price3=$row['price'];
+                $mname=$row['name']; 
+              }
+              
               $sql="SELECT * FROM photoshop WHERE pid='$pid' ";
               $run=mysqli_query($con,$sql);
-              $row=mysqli_fetch_array($run);
-              $price4=$row['price'];
-               $pname=$row['name'];
+              $price4 = 0;
+              $pname='';
+              if(mysqli_num_rows($run)!=0){
+                $row=mysqli_fetch_array($run);
+                $price4=$row['price'];
+                $pname=$row['name'];
+              }
+             
               $sql="SELECT * FROM decoration WHERE did='$did' ";
               $run=mysqli_query($con,$sql);
-              $row=mysqli_fetch_array($run);
-              $price5=$row['price'];
-               $dname=$row['name'];
+              $price5=0;
+              $dname = '';
+              if(mysqli_num_rows($run) !=0){
+                $row=mysqli_fetch_array($run);
+                $price5=$row['price'];
+                $dname=$row['name'];
+              }
               $sql="SELECT * FROM venue WHERE vid='$vid' ";
               $run=mysqli_query($con,$sql);
-              $row=mysqli_fetch_array($run);
-              $price6=$row['price'];
-              $vname=$row['name'];
+              $price6 = 0;
+              $vname ='';
+              if(mysqli_num_rows($run)!=0){
+                $row=mysqli_fetch_array($run);
+                $price6=$row['price'];
+                $vname=$row['name'];
+              }
               $sum=$price1+$price2+$price3+$price4+$price5+$price6+$s; 
                echo " <div class='card-body'>
       <h4 class='text-center'>Wedding Couple Details</h4><hr>
@@ -312,7 +360,7 @@
   </div>
 </div>
   <!--/ Section Services Star /-->
-  <section id="service" class="services-mf route">
+  <section id="service" class="services-mf route mt-4">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
