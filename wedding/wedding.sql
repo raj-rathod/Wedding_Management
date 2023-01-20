@@ -1,17 +1,13 @@
-Chapter-6
-                                                      SOURCE CODES
-
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 22, 2019 at 01:07 AM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.11
+-- Generation Time: Jan 20, 2023 at 03:02 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -35,7 +31,7 @@ CREATE TABLE `admin` (
   `aid` int(11) NOT NULL,
   `name` varchar(20) NOT NULL,
   `psw` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `admin`
@@ -55,7 +51,7 @@ CREATE TABLE `catering` (
   `name` varchar(30) NOT NULL,
   `price` varchar(30) NOT NULL,
   `descr` varchar(90) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `catering`
@@ -75,7 +71,7 @@ CREATE TABLE `decoration` (
   `name` varchar(30) NOT NULL,
   `price` varchar(30) NOT NULL,
   `descr` varchar(90) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `decoration`
@@ -95,7 +91,7 @@ CREATE TABLE `music` (
   `name` varchar(30) NOT NULL,
   `price` varchar(30) NOT NULL,
   `descr` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `music`
@@ -115,7 +111,7 @@ CREATE TABLE `photoshop` (
   `name` varchar(30) NOT NULL,
   `price` varchar(30) NOT NULL,
   `descr` varchar(90) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `photoshop`
@@ -136,7 +132,7 @@ CREATE TABLE `registration` (
   `name` varchar(30) NOT NULL,
   `dname` varchar(30) NOT NULL,
   `dlname` varchar(30) NOT NULL,
-  `date` varchar(30) NOT NULL,
+  `wdate` varchar(30) NOT NULL,
   `pno` varchar(20) NOT NULL,
   `vid` int(11) NOT NULL,
   `mid` int(11) NOT NULL,
@@ -144,16 +140,15 @@ CREATE TABLE `registration` (
   `did` int(11) NOT NULL,
   `tid` int(11) NOT NULL,
   `pid` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `registration`
 --
 
-INSERT INTO `registration` (`reg_id`, `name`, `dname`, `dlname`, `date`, `pno`, `vid`, `mid`, `cid`, `did`, `tid`, `pid`) VALUES
-(4, 'Rajesh', 'Shubham', 'XYZ', '2020-02-13', '500', 125555, 0, 125555, 0, 58222, 55000),
-(6, 'rajeev kumar', 'raushan', 'shyam', '2019-11-04', '500', 0, 0, 0, 0, 0, 0),
-(8, 'chiku', 'boy', 'girl', '2019-11-12', '1000', 0, 0, 0, 0, 0, 0);
+INSERT INTO `registration` (`reg_id`, `name`, `dname`, `dlname`, `wdate`, `pno`, `vid`, `mid`, `cid`, `did`, `tid`, `pid`) VALUES
+(10, 'Rajesh', 'Rajesh', 'Rama', '2023-03-07', '1500', 1, 0, 0, 0, 0, 0),
+(11, 'Rajesh', 'Xy', 'VC', '2023-01-28', '100', 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -166,14 +161,15 @@ CREATE TABLE `theme` (
   `name` varchar(30) NOT NULL,
   `price` varchar(30) NOT NULL,
   `descr` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `theme`
 --
 
 INSERT INTO `theme` (`tid`, `name`, `price`, `descr`) VALUES
-(1, 'Western thme', '58222', 'looking very good');
+(1, 'Western thme', '58222', 'looking very good'),
+(2, 'Holding', '12000', 'Holding is the best wedding th');
 
 -- --------------------------------------------------------
 
@@ -189,23 +185,14 @@ CREATE TABLE `u_info` (
   `pno` varchar(30) NOT NULL,
   `adds` varchar(30) NOT NULL,
   `psw` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `u_info`
 --
 
 INSERT INTO `u_info` (`uid`, `name`, `uname`, `email`, `pno`, `adds`, `psw`) VALUES
-(1, 'rajesh', 'rajesh', 'rajesh@gmail.com', '9148002717', 'dbit', 'rajesh'),
-(2, 'rajeev', 'rajeev', 'rajeev@gmail.com', '9148002717', 'dbit', 'rajeev'),
-(3, 'nikita', 'nikita', 'nikita@gmail.com', '9148002717', 'dbit', 'nikita'),
-(4, 'raushan', 'raushan', 'skfdgdr654@gmail.com', '5466', 'ffd', '123456'),
-(5, 'Alok', 'alok', 'alok@gmail.com', '988888889', 'fortuna', 'fortuna'),
-(6, 'varsha', 'varsha', 'nfgngnfg@gmail.com', '64646', 'dvdvd', '123456'),
-(7, 'chiku', 'chiku123', '1234acd@gmail.com', '78965432789', 'aabcd', 'janu'),
-(8, 'raj', 'raj', 'vfgbfg@gmail.com', '4354656', 'cdffd', '123456'),
-(9, 'manu', 'lekhana', 'dffh@gmail.com', '535464', 'gxgfc', '123456'),
-(10, 'nayan', 'naya', 'nayana@gmail.com', '9845578454', 'ramnagar', 'naya');
+(1, 'rajesh', 'rajesh', 'rajesh@gmail.com', '9148002717', 'dbit', 'rajesh');
 
 -- --------------------------------------------------------
 
@@ -218,7 +205,7 @@ CREATE TABLE `venue` (
   `name` varchar(30) NOT NULL,
   `price` varchar(30) NOT NULL,
   `descr` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `venue`
@@ -312,13 +299,13 @@ ALTER TABLE `photoshop`
 -- AUTO_INCREMENT for table `registration`
 --
 ALTER TABLE `registration`
-  MODIFY `reg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `reg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `theme`
 --
 ALTER TABLE `theme`
-  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `u_info`

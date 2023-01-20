@@ -91,9 +91,9 @@
     </div>
   </div>
   <!--/ Intro Skew End /-->
-  <h2 class="text-center">Registered Wedding</h2>
+  <h2 class="text-center mt-5">Registered Wedding</h2>
   <br>
-   <div class="container">
+   <div class="container mt-4">
      <div class="card">
        <div class="card-header bg-info">
          <div class="row">
@@ -125,34 +125,53 @@
                 $mid=$row['mid'];
               $sql1="SELECT * FROM catering WHERE cid='$cid' ";
               $run1=mysqli_query($con,$sql1);
-              $row=mysqli_fetch_array($run1);
-              $price1=$row['price'];
-              $cname=$row['name'];
+              $price1 = 0;
+              if(mysqli_num_rows($run1)!=0){
+                $row=mysqli_fetch_array($run1);
+                $price1=$row['price'];
+                $cname=$row['name'];
+              }
               $sql1="SELECT * FROM theme WHERE tid='$tid' ";
               $run1=mysqli_query($con,$sql1);
-              $row=mysqli_fetch_array($run1);
-              $price2=$row['price'];
-               $tname=$row['name'];
+              $price2 = 0;
+              if(mysqli_num_rows($run1) !=0){
+                $row=mysqli_fetch_array($run1);
+                $price2=$row['price'];
+                $tname=$row['name'];
+              }
               $sql1="SELECT * FROM music WHERE mid='$mid' ";
               $run1=mysqli_query($con,$sql1);
-              $row=mysqli_fetch_array($run1);
-              $price3=$row['price'];
-               $mname=$row['name'];
+              $price3 = 0;
+              if(mysqli_num_rows($run1) !=0){
+                $row=mysqli_fetch_array($run1);
+                $price3=$row['price'];
+                $mname=$row['name'];
+                }
               $sql1="SELECT * FROM photoshop WHERE pid='$pid' ";
               $run1=mysqli_query($con,$sql1);
-              $row=mysqli_fetch_array($run1);
-              $price4=$row['price'];
-               $pname=$row['name'];
+              $price4 = 0;
+              if(mysqli_num_rows($run1) !=0){
+                $row=mysqli_fetch_array($run1);
+                $price4=$row['price'];
+                $pname=$row['name'];
+              }
+             
               $sql1="SELECT * FROM decoration WHERE did='$did' ";
               $run1=mysqli_query($con,$sql1);
-              $row=mysqli_fetch_array($run1);
-              $price5=$row['price'];
-               $dname=$row['name'];
+              $price5 = 0;
+              if(mysqli_num_rows($run1)!=0){
+                $row=mysqli_fetch_array($run1);
+                $price5=$row['price'];
+                $dname=$row['name'];
+              }
               $sql1="SELECT * FROM venue WHERE vid='$vid' ";
               $run1=mysqli_query($con,$sql1);
-              $row=mysqli_fetch_array($run1);
-              $price6=$row['price'];
-              $vname=$row['name'];
+              $price6 =0;
+              if(mysqli_num_rows($run1) !=0){
+                $row=mysqli_fetch_array($run1);
+                $price6=$row['price'];
+                $vname=$row['name'];
+              }
               $sum=$price1+$price2+$price3+$price4+$price5+$price6+$s;
                 echo " <div class='row'>
                         <div class='col-md-2'><h5>$name</h5></div>
@@ -222,12 +241,6 @@
             <div class="copyright-box">
               <p class="copyright">&copy; Copyright <strong>Aishwarya Wedding Planner</strong>. All Rights Reserved</p>
               <div class="credits">
-                <!--
-                  All the links in the footer should remain intact.
-                  You can delete the links only if you purchased the pro version.
-                  Licensing information: https://bootstrapmade.com/license/
-                  Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=DevFolio
-                -->
                 Designed by <a href="#">Rajesh Rathod and Rajeev Kumar</a>
               </div>
             </div>
