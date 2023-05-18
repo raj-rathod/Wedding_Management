@@ -1,5 +1,5 @@
-# Wedding Management
->it's mini project for database management(DBMS) using mysql , its basically for wedding arrangment 
+# Wedding Management System
+>The Wedding Management System is a mini-project for database management using MySQL. The system is designed to facilitate the arrangement and organization of weddings. It provides a centralized platform to manage various aspects of wedding planning, including cost management, venue selection, music selection, vendor coordination and task scheduling etc.
 
 ### Technology used :
          
